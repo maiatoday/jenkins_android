@@ -1,0 +1,4 @@
+gradle:1.24
+git:2.4.0
+jobConfigHistory:2.12
+android-emulator:2.13.1

@@ -38,7 +38,7 @@ switch to the jenkins user
 Do following commands to generate a ssh key.
 ```
    cd # go to home directory
-   ssh-keygen -t rsa -b 4096 -C "email@host.com" # insert email and choose a different name for the file e.g. repo1-rsa
+   ssh-keygen -t rsa -b 4096 -C "email@host.com" -f repo1-rsa # insert email and choose a different name for the file e.g. repo1-rsa
 ```
 Browse over to github and click on "admin" for each of the repo's, click on deploy key, and add .pub file version as the deploy key. Remember the keys are in the .ssh folder of the shared folder.
 
@@ -64,6 +64,16 @@ When you refer to a github url use the new url as in the following example
 
 # Docker installation
 https://docs.docker.com/installation
+
+# Update the android sdk on the container
+```
+   docker exec -it my_jenkins /bin/bash
+   cd /opt/android-sdk-linux
+   tools/android list sdk --extended -a #look for the name to install e.g. android-19
+   tools/android update sdk --no-ui --filter android-19,tools #change what you need to add
+   exit # to leave the docker bash
+```
+Test the container. You can then commit the image with a tag. `docker commit -m "some message" -a "some author" <insert container hash> user/name:tag` Remember to insert the hash, the user/name and a tag for the image.
 
 # Useful links
 http://dertompson.com/2014/09/01/jenkins-in-a-docker-container/

@@ -2,4 +2,8 @@ gradle:1.24
 git:2.4.0
 jobConfigHistory:2.12
 android-emulator:2.13.1
+oauth-credentials:0.3
+token-macro:1.10
+google-oauth-plugin:0.3
 google-play-android-publisher:1.4.1
+copyartifact:1:36

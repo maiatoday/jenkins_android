@@ -67,11 +67,11 @@ https://docs.docker.com/installation
 
 # Update the android sdk on the container
 ```
-   docker exec -it my_jenkins /bin/bash
-   cd /opt/android-sdk-linux
+   docker exec -it my_jenkins /bin/bash #on the host to start up a shell in the container
+   cd /opt/android-sdk-linux #you are now in the container
    tools/android list sdk --extended -a #look for the name to install e.g. android-19
    tools/android update sdk --no-ui --filter android-19,tools #change what you need to add
-   exit # to leave the docker bash
+   exit # to leave the docker bash shell
 ```
 Test the container. You can then commit the image with a tag. `docker commit -m "some message" -a "some author" <insert container hash> user/name:tag` Remember to insert the hash, the user/name and a tag for the image.
 
